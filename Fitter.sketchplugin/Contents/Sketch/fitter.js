@@ -47,7 +47,7 @@ function fitterProcessor(context, margin, fitHorizontally, fitVertically) {
 
         // Ensures the layer scales to the parent artboard
         while (layerParentGroup){
-          if ([layerParentGroup class] == "MSArtboardGroup"){
+          if (["MSArtboardGroup","MSSymbolMaster"].indexOf(String([layerParentGroup class])) > -1) {
             artboardToSelect = layerParentGroup;
             break;
           }
